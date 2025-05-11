@@ -1,0 +1,32 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Chip8 - Dotnet - Debug Console",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build chip8 dotnet",
+            "program": "${workspaceFolder}/chip8_dotnet_console/bin/Debug/net9.0/chip8_dotnet_console.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/chip8_dotnet_console",
+            "console": "internalConsole",                   // Focus on the "Debug Console" tab when running
+            "pipeTransport": {                              // Swap out the C# debugger to use netcoredbg
+                "pipeCwd": "${workspaceFolder}/chip8_dotnet_console",
+                "pipeProgram": "cmd.exe",
+                "pipeArgs": ["/c"],
+                "debuggerPath": "%USERPROFILE%/.local/netcoredbg/netcoredbg.exe",
+                "debuggerArgs": ["--interpreter=vscode"],
+                "quoteArgs": true,
+                "windows": {
+                    "pipeProgram": "cmd.exe",
+                }
+            },
+            "env": {
+                "DOTNET_ENVIRONMENT": "Development",
+                "ASPNETCORE_ENVIRONMENT": "Development",
+                "TEST_CONFIG": "LocalDebug1",
+                "CONNECTION_STRING": "Server=localhost;Database=TestDb;Trusted_Connection=True;"
+            },
+        },
+    ]
+}

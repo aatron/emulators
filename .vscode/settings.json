@@ -1,0 +1,28 @@
+{
+    // Environment variables added to all of the terminals
+    "terminal.integrated.env.windows": {
+        "TERMINAL_ENV_GREETING": "Hi",
+    },
+
+    // Hide folders in the file explorer
+    "files.exclude": {
+        "**/bin": true,
+        "**/obj": true
+    },
+
+    // Settings to run and debug test projects in the .NET Test Explorer
+    "dotnet.backgroundAnalysis.analyzerDiagnosticsScope": "fullSolution",
+    "dotnet.backgroundAnalysis.compilerDiagnosticsScope": "fullSolution",
+    "dotnet-test-explorer.debugger.debuggerPath": "%USERPROFILE%\\.local\\netcoredbg\\netcoredbg.exe",  // Path to the netcoredbg debugger
+    "dotnet-test-explorer.debugger.pipeProgram": "cmd.exe",
+    "dotnet-test-explorer.debugger.pipeArgs": [
+        "/c"
+    ],
+    "dotnet-test-explorer.enableTelemetry": false,
+    "dotnet-test-explorer.testProjectPath": ".\\code\\tests\\**\\*.csproj",                             // Find all csproj files in the tests folder
+    "dotnet-test-explorer.debugger.debuggerArgs": ["--interpreter=vscode"],
+    "dotnet-test-explorer.leftClickAction": "gotoTest",
+    "dotnet-test-explorer.treeMode": "full",
+    "dotnet-test-explorer.autoExpandTree": true,
+    "dotnet-test-explorer.autoWatch": true  // Setting doesn't seem to work
+}
